@@ -2,9 +2,9 @@ from django.db import models
 
 
 class NewsArticle(models.Model):
-    title = models.CharField(max_length=78)
+    title = models.CharField(max_length=90)
     author = models.CharField(max_length=60)
-    description = models.CharField(max_length=288)
+    description = models.CharField(max_length=500)
     url = models.CharField(max_length=500, null=True)
     urlToImage = models.CharField(max_length=500, null=True)
     publishedAt = models.DateField()
@@ -19,7 +19,7 @@ class NewsArticle(models.Model):
 class SubscribersEmail(models.Model):
     email = models.CharField(max_length=255)
     created = models.DateField(auto_now_add=True)
-    sent = models.IntegerField()
+    sent = models.IntegerField(default=0)
 
     def __str__(self) -> str:
         return self.email
