@@ -1,4 +1,3 @@
-from turtle import update
 from django.apps import AppConfig
 
 

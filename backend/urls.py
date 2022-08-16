@@ -1,5 +1,6 @@
-from django.urls import path, include
-from backend.views import *
+from django.urls import path
+from django.shortcuts import redirect
+from backend.views import home, newsList, deleteNewsArticle, editNewsArticle
 
 
 urlpatterns = [

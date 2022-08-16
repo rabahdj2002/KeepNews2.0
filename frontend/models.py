@@ -16,6 +16,7 @@ class NewsArticle(models.Model):
     def __str__(self) -> str:
         return self.title
 
+
 class SubscribersEmail(models.Model):
     email = models.CharField(max_length=255)
     created = models.DateField(auto_now_add=True)

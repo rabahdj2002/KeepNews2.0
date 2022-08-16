@@ -40,7 +40,13 @@
                 </div>
               </div>
               <div class="row mb-3">
-                <label class="col-sm-2 col-form-label" for="basic-default-message">Description</label>
+                <label class="col-sm-2 col-form-label" for="basic-default-company">Date</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" name="date" value="{{ news_article.publishedAt }}" placeholder="Aug. 16, 2022" />
+                </div>
+              </div>
+              <div class="row mb-3">
+                <label class="col-sm-2 col-form-label" for="basic-default-message">Content</label>
                 <div class="col-sm-10">
                   <textarea
                     name="description"
