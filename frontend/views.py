@@ -17,4 +17,5 @@ def home(response):
     
     news = NewsArticle.objects.order_by("-publishedAt")[:30] #.filter(publishedAt=date.today().strftime('%Y-%m-%d'))
     context = {"news": news}
-    return render(response, 'frontend/home.html', context)
+    return render(response, 'frontend/frontend.html', context)
+
