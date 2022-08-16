@@ -397,12 +397,16 @@
                 <div class="navbar-nav align-items-center">
                   <div class="nav-item d-flex align-items-center">
                     <i class="bx bx-search fs-4 lh-0"></i>
-                    <input
-                      type="text"
-                      class="form-control border-0 shadow-none"
-                      placeholder="Search..."
-                      aria-label="Search..."
-                    />
+                    <form method="post" action="/admin/news/">
+                      {% csrf_token %}
+                      <input
+                        type="text"
+                        name="id"
+                        class="form-control border-0 shadow-none"
+                        placeholder="Article ID : 1"
+                        aria-label="Article ID : 1"
+                      />
+                    </form>
                   </div>
                 </div>
                 <!-- /Search -->

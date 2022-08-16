@@ -10,6 +10,13 @@ def home(response):
 
 def newsList(response):
     news_sorted = NewsArticle.objects.order_by("-publishedAt")[:30]
+    if response.method == "POST":
+        id = response.POST.get('id')
+        try:
+            news_sorted = [NewsArticle.objects.get(id=id)]
+        except:
+            context = {"news": []}
+            return render(response, 'backend/news_list.html', context)
     context = {"news": news_sorted}
     return render(response, 'backend/news_list.html', context)
 
