@@ -98,6 +98,18 @@
                 </a>
               </li>
 
+            <!-- Emails -->
+            {% if '/emails/' in request.path %}
+                <li class="menu-item active">
+            {% else %}
+                <li class="menu-item">
+            {% endif %}
+                <a href="/admin/emails/" class="menu-link">
+                  <i class="menu-icon tf-icons bx bx-collection"></i>
+                  <div data-i18n="Analytics">Emails</div>
+                </a>
+              </li>
+
             <!-- Misc -->
             <li class="menu-header small text-uppercase"><span class="menu-header-text">Info</span></li>
             <li class="menu-item">
@@ -149,8 +161,8 @@
                         type="text"
                         name="search"
                         class="form-control border-0 shadow-none"
-                        placeholder="Title or ID"
-                        aria-label="Title or ID"
+                        placeholder="Search News ..."
+                        aria-label="Search News ..."
                       />
                     </form>
                   </div>
@@ -268,15 +280,6 @@
       <div class="layout-overlay layout-menu-toggle"></div>
     </div>
     <!-- / Layout wrapper -->
-
-    <div class="buy-now">
-      <a
-        href="/"
-        target="_blank"
-        class="btn btn-danger btn-buy-now"
-        >View Front-end</a
-      >
-    </div>
 
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->

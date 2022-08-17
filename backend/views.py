@@ -59,3 +59,24 @@ def editNewsArticle(response, id):
     news_article = NewsArticle.objects.get(id=id)
     context = {"news_article": news_article}
     return render(response, 'backend/edit_article.html', context)
+
+
+def emailsList(response):
+    emails = SubscribersEmail.objects.all()[:30]
+    if response.method == "POST":
+        search = response.POST.get('search')
+        try:
+            emails = [SubscribersEmail.objects.get(id=search)]
+        except Exception:
+            try:
+                emails = SubscribersEmail.objects.filter(email__contains=search)
+            except Exception:
+                context = {"emails": []}
+                return render(response, 'backend/emails_list.html', context)
+    context = {"emails": emails}
+    return render(response, 'backend/emails_list.html', context)
+
+
+def deleteEmailsArticle(response, id):
+    SubscribersEmail.objects.filter(id=id).delete()
+    return redirect("emails_list")

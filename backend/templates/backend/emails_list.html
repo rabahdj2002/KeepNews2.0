@@ -10,32 +10,32 @@
 
     <!-- Basic Bootstrap Table -->
     <div class="card">
-      <h5 class="card-header">Latest News :</h5>
+      <h5 class="card-header">Subscribers Emails List :</h5>
       <div class="table-responsive text-nowrap">
-        {% if news %}
+        {% if emails %}
           <table class="table pb-5">
             <thead>
               <tr>
                 <th>Id</th>
-                <th>Title</th>
-                <th>Date</th>
+                <th>Email</th>
+                <th>Emails Sent</th>
                 <th>Actions</th>
               </tr>
             </thead>
             <tbody class="table-border-bottom-0">
-              {% for article in news %}
+              {% for email in emails %}
               <tr>
-                <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{ article.id }}</strong></td>
-                <td>{{ article.title }}</td>
-                <td><span class="badge bg-label-primary me-1">{{ article.publishedAt }}</span></td>
+                <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{ email.id }}</strong></td>
+                <td>{{ email.email }}</td>
+                <td><span class="badge bg-label-primary me-1">{{ email.sent }}</span></td>
                 <td>
                   <div class="dropdown">
                     <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
                       <i class="bx bx-dots-vertical-rounded"></i>
                     </button>
                     <div class="dropdown-menu">
-                      <a class="dropdown-item" href="/admin/news/edit/{{ article.id }}/"><i class="bx bx-edit-alt me-1"></i> Edit</a>
-                      <a class="dropdown-item" href="/admin/news/delete/{{ article.id }}/"><i class="bx bx-trash me-1"></i> Delete</a>
+                      <a class="dropdown-item" href="/admin/emails/edit/{{ email.id }}/"><i class="bx bx-edit-alt me-1"></i> Edit</a>
+                      <a class="dropdown-item" href="/admin/emails/delete/{{ email.id }}/"><i class="bx bx-trash me-1"></i> Delete</a>
                     </div>
                   </div>
                 </td>
@@ -44,7 +44,7 @@
             </tbody>
           </table>
         {% else %}
-          <h6 class="card-header">No Article Was Found!</h6>
+          <h6 class="card-header">No Email Was Found!</h6>
         {% endif %}
       </div>
     </div>
