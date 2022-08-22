@@ -11,10 +11,10 @@ def home(response):
             new_sub = SubscribersEmail(email=mail)
             new_sub.save()
             messages.add_message(response, messages.INFO, 'Successfully Subscribed To Our Newsletter.')
-            return redirect('home')
+            return redirect('home_front')
         else:
             messages.add_message(response, messages.INFO, 'This Email Is Already Subscribed.')
-            return redirect('home')
+            return redirect('home_front')
 
     news = NewsArticle.objects.order_by("-publishedAt")[:30]
     context = {"news": news}

@@ -77,6 +77,9 @@ def emailsList(response):
     return render(response, 'backend/emails_list.html', context)
 
 
-def deleteEmailsArticle(response, id):
+def deleteEmails(response, id):
     SubscribersEmail.objects.filter(id=id).delete()
     return redirect("emails_list")
+
+def sendEmails(response, id):
+    pass
