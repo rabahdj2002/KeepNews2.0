@@ -1,11 +1,13 @@
 from django.urls import path
 from django.shortcuts import redirect
-from backend.views import home, newsList, deleteNewsArticle, editNewsArticle, emailsList, deleteEmails, sendEmails
+from backend.views import home, newsList, deleteNewsArticle, editNewsArticle, emailsList, deleteEmails, sendEmails, userLogin
 
 
 urlpatterns = [
     path('', lambda request: redirect('dashboard/', permanent=False)),
     path('dashboard/', home, name='home'),
+
+    path('login/', userLogin, name='user_login'),
 
     path('news/', newsList, name='news_list'),
     path('news/delete/<int:id>/', deleteNewsArticle, name='delete_news_article'),

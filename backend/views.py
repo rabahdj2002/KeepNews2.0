@@ -1,8 +1,10 @@
 from django.shortcuts import render, redirect
 from datetime import datetime
 from frontend.models import NewsArticle, SubscribersEmail
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import authenticate, login
 
-
+@login_required
 def home(response):
     news = NewsArticle.objects.all()
     emails = SubscribersEmail.objects.all()
@@ -81,5 +83,19 @@ def deleteEmails(response, id):
     SubscribersEmail.objects.filter(id=id).delete()
     return redirect("emails_list")
 
+
 def sendEmails(response, id):
     pass
+
+
+def userLogin(response):
+    if response.method == 'POST':
+        username = response.POST['username']
+        password = response.POST['password']
+        user = authenticate(response, username=username, password=password)
+        if user is not None:
+            login(response, user)            
+            return redirect('main')
+        else:
+            return redirect('login')
+    return render(response, 'backend/login.html', {})
