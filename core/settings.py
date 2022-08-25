@@ -1,5 +1,6 @@
 from pathlib import Path
 import os
+from django.contrib.messages import constants as messages
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -15,7 +16,6 @@ SECRET_KEY = 'django-insecure-9edg^n(rygu!6e&xyw#f2jv9&xu$h1rx3b92a+*6khk#^*i^8e
 DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
-
 
 # Application definition
 
@@ -57,6 +57,10 @@ TEMPLATES = [
         },
     },
 ]
+
+MESSAGE_TAGS = {
+    messages.ERROR: 'danger'
+}
 
 WSGI_APPLICATION = 'core.wsgi.application'
 

@@ -14,7 +14,7 @@
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
 
-    <title>Login Basic - Pages | Sneat - Bootstrap 5 HTML Admin Template - Pro</title>
+    <title>Forgot Password Basic - Pages | Sneat - Bootstrap 5 HTML Admin Template - Pro</title>
 
     <meta name="description" content="" />
 
@@ -30,6 +30,7 @@
     />
 
     <!-- Icons. Uncomment required icon fonts -->
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://keepnews20.netlify.app/assets/vendor/fonts/boxicons.css" />
 
     <!-- Core CSS -->
@@ -56,68 +57,54 @@
 
     <div class="container-xxl">
       <div class="authentication-wrapper authentication-basic container-p-y">
-        <div class="authentication-inner">
-          <!-- Register -->
+        <div class="authentication-inner py-4">
+          <!-- Forgot Password -->
           <div class="card">
             <div class="card-body">
               <!-- Logo -->
               <div class="app-brand justify-content-center">
-                <a href="/" class="app-brand-link gap-2">
+                <a href="index.html" class="app-brand-link gap-2">
                   <span class="app-brand-logo demo">
                     <img src="https://keepnews20.netlify.app/keepnews2.0-black.png" width="50%" rel="icon" type="image/png" alt="Logo">
                   </span>
                 </a>
               </div>
               <!-- /Logo -->
-              <h4 class="mb-2">Welcome to Keep News 2.0! 👋</h4>
-              <p class="mb-4">Please sign-in to your admin account</p>
-
+              <h4 class="mb-2">Forgot Password? 🔒</h4>
+              {% if messages %}
+                {% for message in messages %}
+                <div class="alert alert-{{ message.tags }} mb-0 alert-dismissible fade show" role="alert">
+                  {{ message }}
+                </div>
+                <br>
+                {% endfor %}
+              {% else %}
+                <p class="mb-4">Enter your email and we'll send you instructions to reset your password</p>
+              {% endif %}
               <form id="formAuthentication" class="mb-3" method="POST">
                 {% csrf_token %}
                 <div class="mb-3">
-                  <label for="username" class="form-label">username</label>
+                  <label for="email" class="form-label">Email</label>
                   <input
                     type="text"
                     class="form-control"
-                    id="username"
-                    name="username"
-                    placeholder="Enter your username"
+                    id="email"
+                    name="email"
+                    placeholder="Enter your email"
                     autofocus
                   />
                 </div>
-                <div class="mb-3 form-password-toggle">
-                  <div class="d-flex justify-content-between">
-                    <label class="form-label" for="password">Password</label>
-                    <a href="/admin/forgot_pwd/">
-                      <small>Forgot Password?</small>
-                    </a>
-                  </div>
-                  <div class="input-group input-group-merge">
-                    <input
-                      type="password"
-                      id="password"
-                      class="form-control"
-                      name="password"
-                      placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
-                      aria-describedby="password"
-                    />
-                    <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
-                  </div>
-                </div>
-                <div class="mb-3">
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="remember-me" />
-                    <label class="form-check-label" for="remember-me"> Remember Me </label>
-                  </div>
-                </div>
-                <div class="mb-3">
-                  <button class="btn btn-primary d-grid w-100" type="submit">Sign in</button>
-                </div>
+                <button class="btn btn-primary d-grid w-100">Send Reset Link</button>
               </form>
-
+              <div class="text-center">
+                <a href="/admin/login/" class="d-flex align-items-center justify-content-center">
+                  <i class="bx bx-chevron-left scaleX-n1-rtl bx-sm"></i>
+                  Back to login
+                </a>
+              </div>
             </div>
           </div>
-          <!-- /Register -->
+          <!-- /Forgot Password -->
         </div>
       </div>
     </div>
