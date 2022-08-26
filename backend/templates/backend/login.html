@@ -72,7 +72,7 @@
               <h4 class="mb-2">Welcome to Keep News 2.0! 👋</h4>
               <p class="mb-4">Please sign-in to your admin account</p>
 
-              <form id="formAuthentication" class="mb-3" method="POST">
+              <form id="formAuthentication" class="mb-3" action="/admin/login/" method="POST">
                 {% csrf_token %}
                 <div class="mb-3">
                   <label for="username" class="form-label">username</label>
