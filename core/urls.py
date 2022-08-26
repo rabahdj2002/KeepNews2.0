@@ -7,3 +7,5 @@ urlpatterns = [
     path('', include('frontend.urls')),
     path('admin/', include('backend.urls')),
 ]
+
+handler404 = 'frontend.views.handler404'

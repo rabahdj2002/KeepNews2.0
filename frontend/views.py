@@ -19,3 +19,15 @@ def home(response):
     news = NewsArticle.objects.order_by("-publishedAt")[:30]
     context = {"news": news}
     return render(response, 'frontend/frontend.html', context)
+
+
+def handler404(request, exception):
+    return render(request, "frontend/404.html")
+
+
+def coming_soon(request):
+    return render(request, 'news/coming_soon.html', {})
+
+
+def aboutus(request):
+    return render(request, 'frontend/aboutus.html', {})

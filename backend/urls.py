@@ -20,3 +20,5 @@ urlpatterns = [
     path('emails/delete/<int:id>/', deleteEmails, name='delete_email'),
     path('emails/send/<int:id>/', sendEmails, name='send_email'),
 ]
+
+handler404 = 'frontend.views.handler404'
