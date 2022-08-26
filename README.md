@@ -41,7 +41,7 @@ python manage.py runserver
 Go to your [127.0.0.1:8000](http://127.0.0.1:8000/) to view your website
 
 ## Note
-Many features including sending emails are still under development
+- Many features including sending emails are still under development
 
-Make sure you use your own domain in settings.py
+- Make sure you use your own domain in settings.py
 ![settings.py](settings_allowed_hosts.PNG)
