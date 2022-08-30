@@ -1,48 +1,84 @@
-# Keep News 2.0:
+<div align="center">
 
-[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/K3K8EMH3R)
+# Keep News 2.0
+
+</div>
 
 Keep News 2.0 Is An Automated News Delivery System for Exclusive News And Events That Concern The Russia-Ukraine Conflict.
 
 The website automatically fetches news using a free [third-party API](https://rapidapi.com/contextualwebsearch/api/web-search/) every 1 hour.
 
-## Demo
+View [DEMO](https://studyroom.djebbesrabah.repl.co/)
 
-### Frontend :
-Front End Demo [Here](https://keepnews20.djebbesrabah.repl.co/)
-### Backend :
-Back End Demo [Here](https://keepnews20.djebbesrabah.repl.co/admin/dashboard/)
+### Cloning the repository
 
-username: rabahdjebbes <br />
-password: 02.02.2002
-
-
-
-## Installation
-
-Clone The project to your local machine:
+--> Clone the repository using the command below :
 
 ```bash
-git clone https://github.com/rabahdj2002/KeepNews2.0.git
+git clone https://github.com/rabahdj2002/StudyRooms.git
+
 ```
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install the requirements:
+--> Move into the directory where we have the project files :
 
 ```bash
-pip install -r requiremnts.txt
+cd StudyRooms
+
 ```
 
-## Running
+--> Create a virtual environment :
+
+```bash
+# Let's install virtualenv first
+pip install virtualenv
+
+# Then we create our virtual environment
+virtualenv envname
+
+```
+
+--> Activate the virtual environment :
+
+```bash
+envname\scripts\activate
+
+```
+
+--> Install the requirements :
+
+```bash
+pip install -r requirements.txt
+
+```
+
+### Running the App
+
+--> To run the App, we use :
 
 ```bash
 python manage.py runserver
+
 ```
 
-Go to your [127.0.0.1:8000](http://127.0.0.1:8000/) to view your website
+> ⚠ Then, the development server will be started at http://127.0.0.1:8000/
 
-## Note
-- Many features including sending emails are still under development
+### App Preview :
 
-- Make sure you use your own domain in settings.py
-
-![settings.py](settings_allowed_hosts.PNG)
+<table width="100%"> 
+<tr>
+<td width="50%">  
+  
+<br>
+<p align="center">
+  Feed Home
+</p>
+<img src="https://user-images.githubusercontent.com/72341453/134747262-0a92233d-8010-40f8-84c5-8d94895aac44.PNG">
+</td> 
+<td width="50%">
+<br>
+<p align="center">
+  Room Conversation Preview
+</p>
+<img src="https://user-images.githubusercontent.com/72341453/134747155-3ca5b55f-b064-4741-aeae-abe90bddf41e.PNG">  
+</td>
+</table>
