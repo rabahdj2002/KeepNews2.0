@@ -15,14 +15,14 @@ View [DEMO](https://studyroom.djebbesrabah.repl.co/)
 --> Clone the repository using the command below :
 
 ```bash
-git clone https://github.com/rabahdj2002/StudyRooms.git
+git clone https://github.com/rabahdj2002/KeepNews2.0.git
 
 ```
 
 --> Move into the directory where we have the project files :
 
 ```bash
-cd StudyRooms
+cd KeepNews2.0
 
 ```
 
