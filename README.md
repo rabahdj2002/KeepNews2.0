@@ -70,14 +70,14 @@ python manage.py runserver
   
 <br>
 <p align="center">
-  Feed Home
+  Home View
 </p>
 <img src="https://raw.githubusercontent.com/rabahdj2002/KeepNews2.0/main/.github/FireShot Capture 009 - Keep News 2.0 - keepnews20.djebbesrabah.repl.co.png">
 </td> 
 <td width="50%">
 <br>
 <p align="center">
-  Room Conversation Preview
+  News Display
 </p>
 <img src="https://raw.githubusercontent.com/rabahdj2002/KeepNews2.0/main/.github/FireShot%20Capture%20010%20-%20Keep%20News%202.0%20-%20keepnews20.djebbesrabah.repl.co.png">  
 </td>
