@@ -42,5 +42,5 @@ def getNews(topics=['ukraine', 'russia', 'war', 'putin', 'zelensky'], limit="50"
 
 
 def keepAlive():
-    x = requests.get(ALLOWED_HOSTS[0])
+    x = requests.get(ALLOWED_HOSTS[1])
     print(x.status_code)
