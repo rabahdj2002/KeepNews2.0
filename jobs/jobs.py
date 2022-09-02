@@ -1,7 +1,9 @@
 import time
 from datetime import datetime
+from distutils import core
 
 import requests
+from core.settings import ALLOWED_HOSTS
 from frontend.models import NewsArticle
 
 
@@ -37,3 +39,8 @@ def getNews(topics=['ukraine', 'russia', 'war', 'putin', 'zelensky'], limit="50"
                     total += 1
         print(f"Fetched {total} Articles For {topic}.")
         time.sleep(1)
+
+
+def keepAlive():
+    x = requests.get(ALLOWED_HOSTS[0])
+    print(x.status_code)
