@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, HttpResponse
+from django.shortcuts import render, redirect
 from datetime import datetime
 from frontend.models import NewsArticle, SubscribersEmail
 from django.contrib.auth.decorators import login_required
@@ -9,8 +9,6 @@ import requests
 
 @login_required
 def home(response):
-    if response.method == 'POST':
-        return HttpResponse('Site Is Running')
     news = NewsArticle.objects.all()
     emails = SubscribersEmail.objects.all()
     context = {"news": news, "emails": emails}

@@ -38,8 +38,3 @@ def getNews(topics=['ukraine', 'russia', 'war', 'putin', 'zelensky'], limit="50"
                     total += 1
         print(f"Fetched {total} Articles For {topic}.")
         time.sleep(1)
-
-
-def keepAlive():
-    x = requests.get(ALLOWED_HOSTS[1])
-    print(x.status_code)

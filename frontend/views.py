@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, HttpResponse
 from django.contrib import messages
 from .models import NewsArticle, SubscribersEmail
 
@@ -31,3 +31,7 @@ def coming_soon(request):
 
 def aboutus(request):
     return render(request, 'frontend/aboutus.html', {})
+
+
+def keepAlive(requets):
+    return HttpResponse('Website Is Alive.')
