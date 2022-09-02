@@ -1,6 +1,5 @@
 import time
 from datetime import datetime
-from distutils import core
 
 import requests
 from core.settings import ALLOWED_HOSTS

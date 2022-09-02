@@ -1,5 +1,7 @@
-from pathlib import Path
 import os
+from pathlib import Path
+
+import rollbar
 from django.contrib.messages import constants as messages
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -41,6 +43,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'rollbar.contrib.django.middleware.RollbarNotifierMiddleware', # For Rollbar Error Tracing
 ]
 
 ROOT_URLCONF = 'core.urls'
@@ -124,3 +127,11 @@ STATISFILES_DIRS = [
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_URL = "/admin/login/"
+
+ROLLBAR = {
+    'access_token': '39ba140e5da549f190e8fa3afee676c2',
+    'environment': 'development' if DEBUG else 'production',
+    'root': BASE_DIR,
+    'class': 'rollbar.logger.RollbarHandler',
+}
+rollbar.init(**ROLLBAR)
