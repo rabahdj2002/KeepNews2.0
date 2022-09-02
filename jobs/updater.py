@@ -1,5 +1,5 @@
 from apscheduler.schedulers.background import BackgroundScheduler
-from .jobs import getNews, keepAlive
+from .jobs import getNews
 
 
 def start():
