@@ -2,7 +2,6 @@ import time
 from datetime import datetime
 
 import requests
-from core.settings import ALLOWED_HOSTS
 from frontend.models import NewsArticle
 
 
