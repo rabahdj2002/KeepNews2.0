@@ -8,7 +8,7 @@ Keep News 2.0 Is An Automated News Delivery System for Exclusive News And Events
 
 The website automatically fetches news using a free [third-party API](https://rapidapi.com/contextualwebsearch/api/web-search/) every 1 hour.
 
-View [DEMO](https://keepnews20.djebbesrabah.repl.co/)
+View [DEMO]([https://keepnews20.djebbesrabah.repl.co/](https://keepnews.pythonanywhere.com/))
 
 ### Cloning the repository
 
